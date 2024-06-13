@@ -17,6 +17,7 @@
     "popper.js": "^1.16.1",
     "react": "^18",
     "react-dom": "^18",
+    "sass": "^1.77.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
