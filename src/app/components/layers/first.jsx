@@ -11,7 +11,7 @@ function First() {
                 </div>
                 <div className="grid py-5 text-lg-center text-start " style={{}}>
                     <div className="text-white g-col-lg-4  g-col-12  text-lg-center text-start">
-                        <div className='mx-auto display-1'>
+                        <div className='mx-auto display-2'>
                             Scholarships
                         </div>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque inventore eligendi voluptatum magni, neque enim, aut temporibus reprehenderit explicabo    reiciendis sit unde beatae praesentium cumque libero quasi quia recusandae solutant.
@@ -20,7 +20,7 @@ function First() {
                         </div>
                     </div>
                     <div className="text-white g-col-lg-4 g-col-12 text-lg-center text-start">
-                        <div className='display-1'>
+                        <div className='display-2'>
                             Donations
                         </div>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque inventore eligendi voluptatum magni, neque enim, aut temporibus reprehenderit explicabo    reiciendis sit unde beatae praesentium cumque libero quasi quia recusandae solutant.
@@ -29,7 +29,7 @@ function First() {
                         </div>
                     </div>
                     <div className="text-white g-col-lg-4  g-col-12  text-lg-center text-start">
-                        <div className='mx-auto display-1'>
+                        <div className='mx-auto display-2'>
                             Etcetera
                         </div>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque inventore eligendi voluptatum magni, neque enim, aut temporibus reprehenderit explicabo    reiciendis sit unde beatae praesentium cumque libero quasi quia recusandae solutant.

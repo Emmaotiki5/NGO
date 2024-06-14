@@ -1,8 +1,16 @@
+import Left from "./components/left"
+import Right from "./components/right"
+
 export default function LoginPage () {
     return(
         <>
-            <div className="display-1 text-center">
-                Login Page
+            <div className="grid">
+                <div>
+                    <Left />
+                </div>
+                <div>
+                    <Right />
+                </div>
             </div>
         </>
     )
