@@ -4,15 +4,15 @@
 import Left from "./components/left"
 import Right from "./components/right"
 
-import React from "react";
 import {axios} from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 
 
 export default function LoginPage () {
-    const [user, setUser] = React.useState({
+    const [user, setUser] = useState({
         username: "",
         password: "",
     })
@@ -26,9 +26,9 @@ export default function LoginPage () {
             <div className="d-flex justify-content-center align-items-center border-light" style={{backgroundColor: '', height: "70vh"}}>
                 <div className="container mt-5 ">
                     <form action="" method="post" className="form-control form border-light">
-                    <div className="display-1 text-center">
-                        Sign in
-                    </div>
+                        <div className="display-1 text-center">
+                            Sign in
+                        </div>
                         <div className="grid mt-5">
                             <div className="g-col-lg-5 g-start-lg-5 g-col-12 g-start-1">
                                 <input
@@ -39,7 +39,9 @@ export default function LoginPage () {
                                 value={user.username}
                                 onChange={(e) => setUser({
                                     ...user, username: e.target.value
-                                    })} />
+                                })
+                                }
+                                />
                             </div>
                             <div className="g-col-lg-5 g-start-lg-5 g-col-12 g-start-1">
                                 <input
@@ -50,7 +52,9 @@ export default function LoginPage () {
                                 value={user.password}
                                 onChange={(e) => setUser({
                                     ...user, password: e.target.value
-                                    })} />
+                                })
+                                }
+                                />
                             </div>
                             
                         </div>

@@ -7,9 +7,9 @@ import Image from 'next/image';
 function Navbar() {
     return (
     <>
-        <div className='mb-5'>
-            <nav className='navbar navbar-expand-lg bg-light bd-gutter flex-wrap mb-5 fixed-top'>
-                <div className='container'>
+        <div className=''>
+            <nav className='navbar navbar-expand-lg bg-light bd-gutter flex-wrap  fixed-top'>
+                <div className='container-fluid'>
                     <Link style={{}} href='/'>
                         <Image src={Cu} alt='Logo' style={{width: '100px', height: 'auto' }} />
                     </Link>
@@ -18,16 +18,6 @@ function Navbar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link href="#contact" passHref className='nav-link'>
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="#" passHref className='nav-link'>
-                                    Link
-                                </Link>
-                            </li>
                             <li className='nav-item dropdown'>
                                 <Link className='nav-link dropdown-toggle' href='#' id='navBarDropddown' role='button' data-bs-toggle = 'dropdown' aria-expanded='false'>
                                     Account
