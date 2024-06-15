@@ -13,10 +13,30 @@ model Elixir {
 }
 
 
+model Post {
+  id Int @id @default(autoincrement())
+  author User? @relation(fields: [authorId], references: [id])
+  authorId Int
+  title String
+  content String
+  published DateTime @default(now()) @map(name: "Published")
+}
+
+
 model User {
   id       Int @id @default(autoincrement())
   email String @unique
   username String @unique
   password String
-  created_at DateTime @default(now())
+  created_at DateTime @default(now())  @map(name: "created_at")
+  updated_at DateTime @default(now()) @map(name: "updated_at")
+  posts Post[]
+  postId String?
+  isAdmin Boolean? @default(false)
+  isVerified Boolean? @default(false)
+  forgotPasswordToken String?
+  verifyPasswordToken String?
+  forgotPasswordTokenExpiry DateTime?
+  verifypasswordTokenExpiry DateTime?
 }
+

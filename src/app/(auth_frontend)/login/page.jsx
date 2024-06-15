@@ -1,13 +1,9 @@
 "use client"
 
-
-import Left from "./components/left"
-import Right from "./components/right"
-
-import {axios} from "axios";
-import Link from "next/link";
+import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Registerink from "./components/link";
 
 
 
@@ -17,15 +13,29 @@ export default function LoginPage () {
         password: "",
     })
 
-    const onSignup = async () => {
+    const router = useRouter();
+
+    const onLogin = async (e) => {
+        e.preventdefault();
+        try {
+            
+            const response = await axios.post('api/users/login', user)
+
+            console.log(response.data);
+
+            router.push('/')
+
+        } catch (err) {
+            console.log(err)
     }
+}
 
 
     return(
         <>
             <div className="d-flex justify-content-center align-items-center border-light" style={{backgroundColor: '', height: "70vh"}}>
                 <div className="container mt-5 ">
-                    <form action="" method="post" className="form-control form border-light">
+                    <form action="" method="post" className="form-control form border-light" onSubmit={onLogin}>
                         <div className="display-1 text-center">
                             Sign in
                         </div>
@@ -56,16 +66,21 @@ export default function LoginPage () {
                                 }
                                 />
                             </div>
-                            
                         </div>
                         <div className="d-flex justify-content-center flex-column align-items-center mt-5 ">
-                                <button type="submit" className="btn btn-md btn-outline-secondary">
+                                <button
+                                type="submit"
+                                className="btn
+                                btn-md
+                                btn-outline-secondary"
+                                >
                                     Submit
                                 </button>
                         </div>
                     </form>
+                    <Registerink />
                 </div>
             </div>
         </>
     )
-};
+}

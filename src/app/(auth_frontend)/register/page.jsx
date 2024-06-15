@@ -1,9 +1,13 @@
 "use client"
-import { axios } from "axios"
+import  axios  from "axios"
 import Link from "next/link"
 import { NextResponse } from "next/server"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import LoginLink from "./components/link"
+import { PrismaClient } from "@prisma/client"
+
 
 
 
@@ -13,8 +17,22 @@ export default function RegisterPage () {
         email: "",
         password: "",
     })
+    const db = new PrismaClient()
+    const router = useRouter()
+    const onSignup = async (e)=> {
+        e.preventDefault();
+        try {
+            const response = await axios.post('api/users/signup', user);
+            console.log("User Details")
+            console.log(response.data["username"]);
+            console.log("EOD")
 
-    const onSignup = async ()=> {
+            router.push('/login')
+
+        } catch (err) {
+            console.log(err)
+        }
+
 
     }
 
@@ -46,7 +64,12 @@ export default function RegisterPage () {
                                     g-start-md-3
                                     g-start-sm-3"
                                 >
-                                    <button type="button" className="btn btn-outline-dark">
+                                    <button
+                                    type="button"
+                                    className="
+                                                btn
+                                                btn-outline-dark"
+                                    >
                                         Google
                                     </button>
                                 </div>
@@ -65,7 +88,7 @@ export default function RegisterPage () {
                                     Or
                                 </div>
                             </div>
-                            <form action="#" method="post" className="form">
+                            <form action="#" method="post" className="form" onSubmit={onSignup}>
                                 <div className="grid mx-auto">
                                     <div className="
                                         g-col-lg-5
@@ -140,14 +163,23 @@ export default function RegisterPage () {
                                             placeholder="Confirm Password"
                                             />
                                     </div>
-                                    <div className="mt-2 g-col-6 g-start-6">
-                                        <button type="submit" className="btn btn-outline-primary btn-large ">
+                                    <div className="mt-2
+                                                    g-col-6
+                                                    g-start-6">
+                                        <button
+                                        type="submit"
+                                        className="
+                                                    btn
+                                                    btn-outline-primary
+                                                    btn-large "
+                                        >
                                             Submit
                                         </button>
                                     </div>
                                 </div>
                                 <br />
                             </form>
+                            <LoginLink />
                         </div>
                     </div>
             </div>
